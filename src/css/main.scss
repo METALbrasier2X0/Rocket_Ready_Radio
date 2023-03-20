@@ -1,0 +1,34 @@
+// Global stylesheet
+
+$primary-color: #fff;
+$secondary-color: #26c5b0;
+$tertiary-color: #a02ebd;
+$background-color:#013c63;
+
+html{
+    margin: 0;
+    height: 100vh;
+    width: 100vh;
+}
+body{
+    background-color: black;
+    color: white;
+    margin: 0;
+    height: 100vh;
+}
+
+.windows{
+
+    border: $primary-color solid 1px;
+    padding: 10px;
+    width: 350px;
+
+}
+
+//player stylesheet
+
+.player__controls__buttons{
+    border: $primary-color solid 1px;
+    padding: 20px;
+    background: none;
+}
