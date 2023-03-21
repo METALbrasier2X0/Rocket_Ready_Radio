@@ -1,8 +1,10 @@
 // Global stylesheet
 
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
 $primary-color: #fff;
-$secondary-color: #26c5b0;
-$tertiary-color: #a02ebd;
+$secondary-color: #790a0a;
+$tertiary-color: #8f2525;
 $background-color:#013c63;
 
 html{
@@ -27,8 +29,44 @@ body{
 
 //player stylesheet
 
-.player__controls__buttons{
-    border: $primary-color solid 1px;
-    padding: 20px;
-    background: none;
+@keyframes ScrollTitle{
+    from {
+        transform : translateX(-60%);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
 }
+
+.player{
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+
+    .player__controls__buttons{
+        border: $primary-color solid 1px;
+        padding: 10px;
+        background: none;
+        color: $primary-color;
+        font-size: 17px;;
+    }
+
+    .player__display{
+
+        overflow: hidden;
+        width: 60%;
+        margin: 8px 10px;
+        .player__display__title{
+            padding: 8px 25px;
+            color: $tertiary-color;
+            font-family: silkscreen;
+            animation: ScrollTitle 6s linear infinite;
+        }
+
+    }
+
+ 
+
+}
+
