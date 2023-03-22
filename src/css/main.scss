@@ -31,7 +31,7 @@ body{
 
 @keyframes ScrollTitle{
     from {
-        transform : translateX(-60%);
+        transform : translateX(-100%);
     }
 
     to {
@@ -62,6 +62,7 @@ body{
             color: $tertiary-color;
             font-family: silkscreen;
             animation: ScrollTitle 6s linear infinite;
+            width: 105%;
         }
 
     }
