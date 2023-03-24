@@ -8,7 +8,12 @@
     {   
         "id":1,
         "url":"/Persona4.mp3",
-        "title":"Persona 4 heartbeat"}
+        "title":"Persona 4 heartbeat"},
+
+        {   
+        "id":2,
+        "url":"/acat.mp3",
+        "title":"A Cruel Angel's thesis"}
     
 
 ]

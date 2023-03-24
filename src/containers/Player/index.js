@@ -13,54 +13,83 @@ import CallApi from '../api.js'
  * @return  {React element}             Containers that returns the players display
  */
 
-
 function Player(props) {
 
- 
-
-  let track = props.tracks[0];
-
   const [audio_state,set_audio_state] = useState(false)
-  const [id, setId] = useState(0);
-  const [title, setTitle] = useState(track.title);
-  const [audio, setAudio] = useState(new Audio(track.url));
+  const [track, setTrack] = useState(props.tracks[0]);
+  const [title, setTitle] = useState(props.tracks[0].title);
+  const [audio, setAudio] = useState(new Audio(props.tracks[0].url));
+  const id = useRef(0);
+
+  // Function to generate random number
+function randomNumber(min, max, excluded) {
+  var n = Math.floor(Math.random() * (max-min) + min);
+  if (n >= excluded) n++;
+  console.log("return is" +n)
+  console.log(excluded)
+  return n;
+}
+
+  useEffect(() => {
+    setTitle(track.title);
+    setAudio(new Audio(track.url));
+    id.current = track.id;
+  },  [track] );
+  
+
+  useEffect(() => {
+    if(audio_state == false){}
+    else{console.log(audio)
+      KeepPlaying()
+    }
+  },  [audio] );
+
+
+  function KeepPlaying(){
+    audio.play()
+  }
+
 
 function play(){
-
   if (audio_state==false){ 
     audio.play()
-
     } 
   else if (audio_state==true){
     audio.pause()
   }
 
   set_audio_state(!audio_state)
- 
 }
-
-audio.onended = function() {
-  alert("The audio has ended");
-}; 
-
 
 function back(){
 
+  if (audio.currentTime < 0.5 ){ 
+    audio.pause()
+    setTrack(props.tracks[0])
+   
+  } else {
   console.log (audio.currentTime);
   audio.currentTime = 0; 
- 
+  }
+  
 }
 
 function forward(){
-  track = props.tracks[1];
-  console.log(track)
-  setTitle(track.title)
-  setAudio(new Audio(track.url))
+  audio.pause();
+  console.log(id.current + "is fobidden")
+  let nextId = randomNumber(0, 2, id.current)
+  setTrack(props.tracks[nextId]) 
+}
+
+function changeTrack(track){
+  setTitle(track.title);
+  setAudio(new Audio(track.url));
 }
 
 
 audio.onended = function() {
-  alert("The audio has ended");
+  let nextId = randomNumber(0, 2, id.current)
+  setTrack(props.tracks[nextId])
 }; 
 
   return (
