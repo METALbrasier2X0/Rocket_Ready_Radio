@@ -10,6 +10,8 @@ import CallApi from './api.js'
  */
 
 import Player from './Player';
+import Playlist from './Playlist';
+import Menu from './Menu';
 
 function Home() {
 
@@ -63,6 +65,7 @@ function Home() {
 
     <section className='draggableLimit'>
 
+    <Menu></Menu>
 
       <Draggable> 
 

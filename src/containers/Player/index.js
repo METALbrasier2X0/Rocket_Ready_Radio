@@ -100,7 +100,7 @@ audio.onended = function() {
     <div className='player__controls'> <button onClick={back} className='player__controls__buttons player__controls__previous'> <FiRewind /> </button> 
     <button onClick={play}  className='player__controls__buttons player__controls__play'> {audio_state == false && <FiPlay /> } {audio_state == true && <FiPause /> }  </button><button onClick={forward} className='player__controls__buttons player__controls__next'> <FiFastForward />  </button> </div>
 
-    <div className='player__display'> <div className='player__display__title'> {title} </div> </div>  
+    <div className='player__display'> <div className='player__display__title noselect'> {title} </div> </div>  
     </div>
    </>
 

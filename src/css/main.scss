@@ -5,22 +5,27 @@
 $primary-color: #fff;
 $secondary-color: #790a0a;
 $tertiary-color: #8f2525;
-$background-color:#013c63;
+$background-color:rgba(1, 96, 99, 0.769);
 
 html{
     margin: 0;
-    height: 100vh;
-    width: 100vh;
+    background: url("/img/background.gif") ;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 body{
-    background-color: black;
     color: white;
     margin: 0;
     height: 100vh;
+    background: radial-gradient(circle, $background-color 0%,rgba(6, 42, 44, 0.986)50%, rgb(1, 0, 15) 100%);
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+    font-weight: 300;
+    overflow: hidden;
 }
 
 .windows{
-
+    background-color: black;
     border: $primary-color solid 1px;
     padding: 10px;
     width: 350px;
@@ -38,6 +43,7 @@ body{
         transform: translateX(-150%);
     }
 }
+
 
 .player{
     display: flex; 
@@ -66,8 +72,319 @@ body{
         }
 
     }
-
- 
-
 }
 
+ //CRT Filter class
+
+ @keyframes flicker {
+    0% {
+      opacity: 0.27861;
+    }
+    5% {
+      opacity: 0.34769;
+    }
+    10% {
+      opacity: 0.23604;
+    }
+    15% {
+      opacity: 0.90626;
+    }
+    20% {
+      opacity: 0.18128;
+    }
+    25% {
+      opacity: 0.83891;
+    }
+    30% {
+      opacity: 0.65583;
+    }
+    35% {
+      opacity: 0.67807;
+    }
+    40% {
+      opacity: 0.26559;
+    }
+    45% {
+      opacity: 0.84693;
+    }
+    50% {
+      opacity: 0.96019;
+    }
+    55% {
+      opacity: 0.08594;
+    }
+    60% {
+      opacity: 0.20313;
+    }
+    65% {
+      opacity: 0.71988;
+    }
+    70% {
+      opacity: 0.53455;
+    }
+    75% {
+      opacity: 0.37288;
+    }
+    80% {
+      opacity: 0.71428;
+    }
+    85% {
+      opacity: 0.70419;
+    }
+    90% {
+      opacity: 0.7003;
+    }
+    95% {
+      opacity: 0.36108;
+    }
+    100% {
+      opacity: 0.24387;
+    }
+  }
+  @keyframes textShadow {
+    0% {
+      text-shadow: 0.4389924193300864px 0 1px rgba(0,30,255,0.5), -0.4389924193300864px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    5% {
+      text-shadow: 2.7928974010788217px 0 1px rgba(0,30,255,0.5), -2.7928974010788217px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    10% {
+      text-shadow: 0.02956275843481219px 0 1px rgba(0,30,255,0.5), -0.02956275843481219px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    15% {
+      text-shadow: 0.40218538552878136px 0 1px rgba(0,30,255,0.5), -0.40218538552878136px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    20% {
+      text-shadow: 3.4794037899852017px 0 1px rgba(0,30,255,0.5), -3.4794037899852017px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    25% {
+      text-shadow: 1.6125630401149584px 0 1px rgba(0,30,255,0.5), -1.6125630401149584px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    30% {
+      text-shadow: 0.7015590085143956px 0 1px rgba(0,30,255,0.5), -0.7015590085143956px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    35% {
+      text-shadow: 3.896914047650351px 0 1px rgba(0,30,255,0.5), -3.896914047650351px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    40% {
+      text-shadow: 3.870905614848819px 0 1px rgba(0,30,255,0.5), -3.870905614848819px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    45% {
+      text-shadow: 2.231056963361899px 0 1px rgba(0,30,255,0.5), -2.231056963361899px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    50% {
+      text-shadow: 0.08084290417898504px 0 1px rgba(0,30,255,0.5), -0.08084290417898504px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    55% {
+      text-shadow: 2.3758461067427543px 0 1px rgba(0,30,255,0.5), -2.3758461067427543px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    60% {
+      text-shadow: 2.202193051050636px 0 1px rgba(0,30,255,0.5), -2.202193051050636px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    65% {
+      text-shadow: 2.8638780614874975px 0 1px rgba(0,30,255,0.5), -2.8638780614874975px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    70% {
+      text-shadow: 0.48874025155497314px 0 1px rgba(0,30,255,0.5), -0.48874025155497314px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    75% {
+      text-shadow: 1.8948491305757957px 0 1px rgba(0,30,255,0.5), -1.8948491305757957px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    80% {
+      text-shadow: 0.0833037308038857px 0 1px rgba(0,30,255,0.5), -0.0833037308038857px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    85% {
+      text-shadow: 0.09769827255241735px 0 1px rgba(0,30,255,0.5), -0.09769827255241735px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    90% {
+      text-shadow: 3.443339761481782px 0 1px rgba(0,30,255,0.5), -3.443339761481782px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    95% {
+      text-shadow: 2.1841838852799786px 0 1px rgba(0,30,255,0.5), -2.1841838852799786px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    100% {
+      text-shadow: 2.6208764473832513px 0 1px rgba(0,30,255,0.5), -2.6208764473832513px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+  }
+  .crt::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(18, 16, 16, 0.1);
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none;
+    animation: flicker 0.15s infinite;
+  }
+  .crt::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 2;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+  }
+  .crt {
+    animation: textShadow 1.6s infinite;
+  }
+  
+
+
+  /* REGULAR SCANLINES SETTINGS */
+
+    // width of 1 scanline (min.: 1px)
+    $scan-width: 2px;
+
+    // emulates a damage-your-eyes bad pre-2000 CRT screen ♥ (true, false)
+    $scan-crt: true;
+
+    // frames-per-second (should be > 1), only applies if $scan-crt: true;
+    $scan-fps: 60;
+
+    // scanline-color (rgba)
+    $scan-color: rgba(#000, .3);
+
+    // set z-index on 8, like in ♥ 8-bits ♥, or…
+    // set z-index on 2147483648 or more to enable scanlines on Chrome fullscreen (doesn't work in Firefox or IE);
+    $scan-z-index: 2147483648; 
+
+/* MOVING SCANLINE SETTINGS */
+
+    // moving scanline (true, false)
+    $scan-moving-line: true;
+
+    // opacity of the moving scanline
+    $scan-opacity: .75;
+
+/* MIXINS */
+
+    // apply CRT animation: @include scan-crt($scan-crt);
+    @mixin scan-crt($scan-crt) {
+        @if $scan-crt == true {
+            animation: scanlines 1s steps($scan-fps) infinite;
+        }
+        @else { animation: none; }
+    }
+
+    // apply CRT animation: @include scan-crt($scan-crt);
+    @mixin scan-moving($scan-moving-line) {
+        @if $scan-moving-line == true {
+            animation: scanline 6s linear infinite;
+        }
+        @else { animation: none; }
+    }
+
+/* CSS .scanlines CLASS */
+
+$scan-moving-duration: 3s;
+$scan-moving-delay: 7s;
+
+    .scanlines {
+        position: relative;
+        overflow: hidden; // only to animate the unique scanline
+
+        &:before,
+        &:after {
+            display: block;
+            pointer-events: none;
+            content: '';
+            position: absolute;
+        }
+
+        // unique scanline travelling on the screen
+        &:before {
+            // position: absolute;
+            // bottom: 100%;
+            width: 100%;
+            height: $scan-width * 1;
+            z-index: $scan-z-index + 1;
+            background: $scan-color;
+            opacity: $scan-opacity;
+            // animation: scanline 6s linear infinite;
+            @include scan-moving($scan-moving-line);
+        }
+
+        // the scanlines, so!
+        &:after {
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: $scan-z-index;
+            background: linear-gradient(
+                to bottom,
+                transparent 20%,
+                $scan-color 51%
+            );
+            background-size: 100% $scan-width*2;
+            @include scan-crt($scan-crt);
+        }  
+    }
+
+/* ANIMATE UNIQUE SCANLINE */
+    @keyframes scanline {
+        0% {
+            transform: translate3d(0,200000%,0);
+            // bottom: 0%; // to have a continuous scanline move, use this line (here in 0% step) instead of transform and write, in &:before, { position: absolute; bottom: 100%; }
+        }
+    }
+
+    @keyframes scanlines {
+        0% {
+            background-position: 0 50%;
+            // bottom: 0%; // to have a continuous scanline move, use this line (here in 0% step) instead of transform and write, in &:before, { position: absolute; bottom: 100%; }
+        }
+    }
+
+ //Main stylesheet
+
+ .banner{
+    background-color: #000;
+    height: 30px;
+    border-bottom: solid white 1px;
+    .logo{
+      height: 80px;
+      width: 140px;
+      display: inline-block;
+      position: relative;
+      background-color: white;
+      clip-path: polygon(0 0, 0 100%, 60% 100%, 100% 40%, 100% 0);
+
+      img{
+        top: 0px; /* equal to border thickness */
+        left: 0px; /* equal to border thickness */
+        width: 139px; /* container height - (border thickness * 2) */
+        height: 79px; /* container height - (border thickness * 2) */
+        background-color: #000;
+        clip-path: polygon(0 0, 0 100%, 60% 100%, 100% 40%, 100% 0);
+      }
+    }
+
+    .info{
+      position: absolute;
+      color: white;
+            font-family: silkscreen;
+            animation: ScrollTitle 15s linear infinite;
+            width: max-content;
+            padding: 0px 250px;
+    }
+ }
+
+ .noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
