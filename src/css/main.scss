@@ -11,6 +11,7 @@ html{
     margin: 0;
     background: url("/img/background.gif") ;
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
 }
 body{
@@ -377,6 +378,35 @@ $scan-moving-delay: 7s;
             width: max-content;
             padding: 0px 250px;
     }
+
+    .topleft{
+
+      &::before{
+        background-image: url("/img/separation.png") ;
+        content: ("");  
+      width: 30px;
+      background-color: #a52a2a00;
+      }
+
+      position: absolute;
+      right: 0;
+      top: 0;
+    
+      font-family: silkscreen;
+      display: flex;
+
+      .hour{
+        background: black;
+      }
+
+      .volume{
+        padding: 0px 15px;
+        font-size: 20px;
+        background: black;
+      }
+
+    }
+
  }
 
  .noselect {
