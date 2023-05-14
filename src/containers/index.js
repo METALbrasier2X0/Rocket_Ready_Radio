@@ -69,7 +69,7 @@ function Home() {
 
       <Draggable> 
 
-        <div className='windows'> 
+        <div className='windows playerContainer'> 
           <Player tracks={tracks}></Player>
         </div>
 

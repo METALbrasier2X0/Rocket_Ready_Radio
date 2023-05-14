@@ -35,6 +35,18 @@ body{
 
 //player stylesheet
 
+.playerContainer{
+
+}
+
+.displayIcon{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+}
+
 @keyframes ScrollTitle{
     from {
         transform : translateX(150%);
@@ -47,11 +59,17 @@ body{
 
 
 .player{
-    display: flex; 
-    align-items: center;
-    justify-content: space-between;
+    
+  -webkit-transition: height 1s; /* Safari */
+    transition: max-height 1s;
 
-    .player__controls__buttons{
+    .playerContainer{ 
+
+      display: flex; 
+      align-items: center;
+      justify-content: space-between;
+
+    .playerContainer__controls__buttons{
         border: $primary-color solid 1px;
         padding: 10px;
         background: none;
@@ -59,12 +77,12 @@ body{
         font-size: 17px;;
     }
 
-    .player__display{
+    .playerContainer__display{
 
         overflow: hidden;
         width: 60%;
         margin: 8px 10px;
-        .player__display__title{
+        .playerContainer__display__title{
             padding: 8px 25px;
             color: $tertiary-color;
             font-family: silkscreen;
@@ -73,6 +91,7 @@ body{
         }
 
     }
+  }
 }
 
  //CRT Filter class
@@ -418,3 +437,4 @@ $scan-moving-delay: 7s;
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
 }
+

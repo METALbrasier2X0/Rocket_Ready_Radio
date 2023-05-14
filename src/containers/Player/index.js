@@ -5,6 +5,14 @@ import { FiPlay } from "react-icons/fi";
 import { FiPause } from "react-icons/fi";
 import { FiRewind } from "react-icons/fi";
 import { FiFastForward } from "react-icons/fi";
+import { TfiAngleDown } from "react-icons/tfi";
+import { TfiAngleUp } from "react-icons/tfi";
+
+
+import { WaveSurfer, WaveForm, Region, Marker } from "wavesurfer-react";
+import TimelinePlugin from "wavesurfer.js/dist/plugin/wavesurfer.timeline.min";
+import CursorPlugin from "wavesurfer.js/dist/plugin/wavesurfer.cursor.min";
+
 import CallApi from '../api.js'
 
 
@@ -18,8 +26,23 @@ function Player(props) {
   const [audio_state,set_audio_state] = useState(false)
   const [track, setTrack] = useState(props.tracks[0]);
   const [title, setTitle] = useState(props.tracks[0].title);
+  const [display, setDisplay] = useState(false);
   const [audio, setAudio] = useState(new Audio(props.tracks[0].url));
   const id = useRef(0);
+
+  const plugins = [
+    {
+       plugin: TimelinePlugin,
+       options: {
+          container: "#timeline"
+       }
+    },
+    {
+       plugin: CursorPlugin
+    }
+
+ ];
+
 
   // Function to generate random number
 function randomNumber(min, max, excluded) {
@@ -94,13 +117,23 @@ audio.onended = function() {
 
   return (
 
-   <>
+   <> 
+
     <div className='player'>
 
-    <div className='player__controls'> <button onClick={back} className='player__controls__buttons player__controls__previous'> <FiRewind /> </button> 
-    <button onClick={play}  className='player__controls__buttons player__controls__play'> {audio_state == false && <FiPlay /> } {audio_state == true && <FiPause /> }  </button><button onClick={forward} className='player__controls__buttons player__controls__next'> <FiFastForward />  </button> </div>
+      <div className='playerContainer'>
+    <div className='playerContainer__controls'> <button onClick={back} className='playerContainer__controls__buttons player__controls__previous'> <FiRewind /> </button> 
+    <button onClick={play}  className='playerContainer__controls__buttons player__controls__play'> {audio_state == false && <FiPlay /> } {audio_state == true && <FiPause /> }  </button><button onClick={forward} className='playerContainer__controls__buttons player__controls__next'> <FiFastForward />  </button> </div>
 
-    <div className='player__display'> <div className='player__display__title noselect'> {title} </div> </div>  
+    <div className='playerContainer__display'> <div className='playerContainer__display__title noselect'> {title} </div> </div>  
+    </div>
+
+
+    <div onClick={ function(event){ setDisplay(!display);} } className='displayIcon'> {display == false && <TfiAngleDown/> } {display == true && <TfiAngleUp/> }</div >
+
+    {display&& <WaveSurfer plugins={plugins} />}
+
+
     </div>
    </>
 

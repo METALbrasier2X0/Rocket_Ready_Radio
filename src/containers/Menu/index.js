@@ -14,10 +14,13 @@ function Menu(props) {
   
   var today = new Date();
 
-  const [Time, setTime] = useState(today.getHours() + ':' + today.getMinutes());
+
+  var minutes = String(today.getMinutes()).padStart(2, '0');
+
+  const [Time, setTime] = useState("00:00");
   const [Volume, setVolume] = useState(null);
 
-  setInterval(() => setTime(today.getHours() + ':' + today.getMinutes() ), 1000);
+  setInterval(() => setTime(today.getHours() + ':' + minutes), 1000);
 
   return (
 
