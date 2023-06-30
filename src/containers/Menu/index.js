@@ -14,18 +14,23 @@ import { storeToken, clearToken, askToken } from '../Session/userSession'
  */
 
 
-
-
 function Menu(props) {
   const dispatch = useDispatch()
 
 const [volumeState, setVolumeState] = useState(true);
+const [SliderState, setSliderState] = useState(false);
+const [SliderValue, setSliderValue] = useState(1);
 
 function VolumeClick() {
 
-  dispatch(storeToken(1));
+  if (volumeState == true) {dispatch(storeToken(0));} else {dispatch(storeToken(1));}
+  setVolumeState(!volumeState)
   
 }
+
+useEffect(() => {
+  dispatch(storeToken(SliderValue));
+},  [SliderValue] );
 
 //Code for the digital clock
 
@@ -48,7 +53,9 @@ function refreshClock() {
         <div className='logo'> <img></img></div>
         <div className='topleft'>
         <div className='hour'>| {date.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" })} |</div>
-        <div className='volume' onClick={ () => VolumeClick() } >  <FiVolume2 /> </div>
+        <div className='volume'  onMouseEnter={() => setSliderState(true) } onMouseLeave={() => setSliderState(false)}   >  {volumeState == false && <FiVolumeX  onClick={ () => VolumeClick() } /> } {volumeState == true && <FiVolume2 onClick={ () => VolumeClick() } /> }
+        {SliderState && (<div className='SliderBlock'> <input type="range" min="0" max="1" value={SliderValue} onChange={(event) => setSliderValue(event.target.value)}  step="0.01" orient="vertical" class="volumeSlider" id="volumeSlider"/> </div>)}
+        </div>
         </div>
        
     </div>

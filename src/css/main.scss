@@ -33,6 +33,94 @@ body{
 
 }
 
+
+
+ //Main stylesheet
+
+ .banner{
+  background-color: #000;
+  height: 30px;
+  border-bottom: solid white 1px;
+  .logo{
+    height: 80px;
+    width: 140px;
+    display: inline-block;
+    position: relative;
+    background-color: white;
+    clip-path: polygon(0 0, 0 100%, 60% 100%, 100% 40%, 100% 0);
+
+    img{
+      top: 0px; /* equal to border thickness */
+      left: 0px; /* equal to border thickness */
+      width: 139px; /* container height - (border thickness * 2) */
+      height: 79px; /* container height - (border thickness * 2) */
+      background-color: #000;
+      clip-path: polygon(0 0, 0 100%, 60% 100%, 100% 40%, 100% 0);
+    }
+  }
+
+  .info{
+    position: absolute;
+    color: white;
+          font-family: silkscreen;
+          animation: ScrollTitle 15s linear infinite;
+          width: max-content;
+          padding: 0px 250px;
+  }
+
+  .topleft{
+
+    &::before{
+      background-image: url("/img/separation.png") ;
+      content: ("");  
+    width: 30px;
+    background-color: #a52a2a00;
+    }
+
+    position: absolute;
+    right: 0;
+    top: 0;
+  
+    font-family: silkscreen;
+    display: flex;
+
+    .hour{
+      background: black;
+    }
+
+    .volume{
+      padding: 0px 15px;
+      font-size: 20px;
+      background: black;
+
+      .SliderBlock{
+        position: absolute;
+        right: 0px;
+      .volumeSlider{
+        background-color: #000;
+        width: 50px;
+        margin-top: 20px;
+      }
+    }
+    }
+
+  }
+
+}
+
+.noselect {
+-webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+}
+
+
+
+
 //player stylesheet
 
 .playerContainer{
@@ -364,77 +452,3 @@ $scan-moving-delay: 7s;
             // bottom: 0%; // to have a continuous scanline move, use this line (here in 0% step) instead of transform and write, in &:before, { position: absolute; bottom: 100%; }
         }
     }
-
- //Main stylesheet
-
- .banner{
-    background-color: #000;
-    height: 30px;
-    border-bottom: solid white 1px;
-    .logo{
-      height: 80px;
-      width: 140px;
-      display: inline-block;
-      position: relative;
-      background-color: white;
-      clip-path: polygon(0 0, 0 100%, 60% 100%, 100% 40%, 100% 0);
-
-      img{
-        top: 0px; /* equal to border thickness */
-        left: 0px; /* equal to border thickness */
-        width: 139px; /* container height - (border thickness * 2) */
-        height: 79px; /* container height - (border thickness * 2) */
-        background-color: #000;
-        clip-path: polygon(0 0, 0 100%, 60% 100%, 100% 40%, 100% 0);
-      }
-    }
-
-    .info{
-      position: absolute;
-      color: white;
-            font-family: silkscreen;
-            animation: ScrollTitle 15s linear infinite;
-            width: max-content;
-            padding: 0px 250px;
-    }
-
-    .topleft{
-
-      &::before{
-        background-image: url("/img/separation.png") ;
-        content: ("");  
-      width: 30px;
-      background-color: #a52a2a00;
-      }
-
-      position: absolute;
-      right: 0;
-      top: 0;
-    
-      font-family: silkscreen;
-      display: flex;
-
-      .hour{
-        background: black;
-      }
-
-      .volume{
-        padding: 0px 15px;
-        font-size: 20px;
-        background: black;
-      }
-
-    }
-
- }
-
- .noselect {
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
-}
-

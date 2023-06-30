@@ -25,12 +25,14 @@ import CallApi from '../api.js'
 
 function Player(props) {
 
+  let UserVolume = useSelector(askToken).payload.Token.value
+
   const [audio_state,set_audio_state] = useState(false)
   const [track, setTrack] = useState(props.tracks[0]);
   const [title, setTitle] = useState(props.tracks[0].title);
   const [display, setDisplay] = useState(false);
   const [audio, setAudio] = useState(new Audio(props.tracks[0].url));
-  const [Volume, setVolume] = useState(1);
+  const [Volume, setVolume] = useState(UserVolume);
   const id = useRef(0);
   
 
@@ -58,7 +60,7 @@ function randomNumber(min, max, excluded) {
   return n;
 }
 
-let UserVolume = useSelector(askToken).payload.Token.value
+
 
 useEffect(() => {
   setVolume(UserVolume)
