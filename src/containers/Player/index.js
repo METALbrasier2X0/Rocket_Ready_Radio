@@ -8,6 +8,8 @@ import { FiFastForward } from "react-icons/fi";
 import { TfiAngleDown } from "react-icons/tfi";
 import { TfiAngleUp } from "react-icons/tfi";
 
+import { storeToken, clearToken, askToken } from '../Session/userSession'
+import { useSelector, useDispatch } from 'react-redux'
 
 import { WaveSurfer, WaveForm, Region, Marker } from "wavesurfer-react";
 import TimelinePlugin from "wavesurfer.js/dist/plugin/wavesurfer.timeline.min";
@@ -28,7 +30,9 @@ function Player(props) {
   const [title, setTitle] = useState(props.tracks[0].title);
   const [display, setDisplay] = useState(false);
   const [audio, setAudio] = useState(new Audio(props.tracks[0].url));
+  const [Volume, setVolume] = useState(1);
   const id = useRef(0);
+  
 
   const plugins = [
     {
@@ -43,6 +47,7 @@ function Player(props) {
 
  ];
 
+ audio.volume = Volume;
 
   // Function to generate random number
 function randomNumber(min, max, excluded) {
@@ -52,6 +57,12 @@ function randomNumber(min, max, excluded) {
   console.log(excluded)
   return n;
 }
+
+let UserVolume = useSelector(askToken).payload.Token.value
+
+useEffect(() => {
+  setVolume(UserVolume)
+},  [useSelector(askToken).payload.Token.value] );
 
   useEffect(() => {
     setTitle(track.title);
